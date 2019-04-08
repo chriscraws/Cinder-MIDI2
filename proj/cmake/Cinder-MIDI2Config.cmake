@@ -31,6 +31,11 @@ if( NOT TARGET Cinder-MIDI2 )
 		find_library( JACK_LIB jack )
 		target_link_libraries( Cinder-MIDI2 PRIVATE ${JACK_LIB})
 	endif()
+
+	if ( DEFINED CINDER_MAC )
+	  add_definitions(-DCINDER_MAC )
+	  target_link_libraries( Cinder-MIDI2 "-framework CoreMidi" )
+	endif()
   
   target_link_libraries( Cinder-MIDI2 PRIVATE cinder )
   

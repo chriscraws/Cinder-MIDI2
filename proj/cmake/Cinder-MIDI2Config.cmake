@@ -34,7 +34,7 @@ if( NOT TARGET Cinder-MIDI2 )
 
 	if ( DEFINED CINDER_MAC )
 	  add_definitions(-DCINDER_MAC )
-	  target_link_libraries( Cinder-MIDI2 "-framework CoreMidi" )
+	  target_link_libraries( Cinder-MIDI2 PUBLIC "-framework CoreMidi" )
 	endif()
   
   target_link_libraries( Cinder-MIDI2 PRIVATE cinder )
